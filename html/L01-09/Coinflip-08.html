@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Coinflip</title>
+  </head>
+  <body>
+
+
+    <button onclick="
+    playGame('Heads');
+    ">Guess Heads</button>
+
+    <button onclick="
+    playGame('Tails');
+    ">Guess Tails</button>
+
+    <button onclick="
+    localStorage.removeItem('result');
+    result = {
+      wins: 0,
+      losses: 0
+    };
+    alert('Score was reset!');
+    
+    ">Reset score</button>
+
+    <script>
+
+
+
+      let result = JSON.parse(localStorage.getItem('result')) || {
+        wins: 0,
+        losses: 0
+      }; 
+      
+
+      function playGame(userInput) {
+
+        let HeadsOrTails = coinFlip();
+
+        let message = '';
+        
+        if (userInput === HeadsOrTails) {
+          result.wins += 1;
+          message = 'You win!';
+        } else {
+          result.losses += 1;
+          message = 'You lose.';
+        }
+
+        localStorage.setItem('result', JSON.stringify(result));
+
+        alert(`
+        ${message}
+        Wins: ${result.wins}
+        Losses: ${result.losses}`);
+        
+      }
+      
+      function coinFlip() {
+        const coinValue = Math.random();
+        
+        let coinFlip = null;
+
+       if (coinValue > 1/2 && coinValue <= 1) {
+        coinFlip = 'Heads';
+       } else {
+        coinFlip = 'Tails';
+       }
+       console.log(coinFlip);
+       return coinFlip;
+       }
+
+      
+    </script>
+    
+  </body>
+</html>

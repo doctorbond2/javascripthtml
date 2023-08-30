@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12 Advanced Functions</title>
+    <link rel="stylesheet" href="/styles/12-a.css">
+  </head>
+  <body>
+    <div class="list">
+    <div class="js-list list"></div>
+    </div>
+    <script>
+
+      const randomArray = [];
+
+      for (let i = 0; i <= 5; i++) {
+        let number = Math.random();
+        if (number < 0.3)
+        randomArray.push(-1);
+      }
+      console.log(randomArray);
+
+      const listElement = document.querySelector('.js-list');
+      let positiveObject = {
+        score: [],
+        attempt: []
+      };  
+
+      const multiply1 = (num1,num2) => num1*num2;
+
+      console.log(multiply1(2,5));
+
+      function countPositive(array) {
+       array.forEach((value, index) => {
+        let {attempt, score} = positiveObject;
+
+        if (value < 0)  {
+          attempt.push((index + 1));
+          score.push(value);
+        }
+       });
+       return positiveObject;
+      }
+
+        function scoreScreen() {
+          let html = '';
+
+          positiveObject.attempt.forEach((value, index)=>{
+            html += `
+            <div>Position: ${positiveObject.attempt[index]}
+            <div>Negative value: ${positiveObject.score[index]}
+              `;
+            });
+            listElement.innerHTML = html;
+       }
+        countPositive([2,-5,3,-4,-12]);
+        scoreScreen();
+    </script>
+  </body>
+</html> 

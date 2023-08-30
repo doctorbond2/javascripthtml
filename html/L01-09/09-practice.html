@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>DOM</title>
+
+  </head>
+  <body>
+
+    <button class="js-calc-button" onclick="
+      calculateTotal();
+      ">Calculate</button>
+
+    <input class="js-math" placeholder="Input here...">
+    <p class="js-display-value"></p>
+
+    <script>
+
+      function calculateTotal () {
+        const inputElement = document.querySelector('.js-math');
+
+        let numberValue = inputElement.value;
+
+        String(numberValue);
+        
+        console.log(typeof inputElement.value);
+
+        console.log(numberValue);
+        
+        return eval(numberValue);
+
+        
+        
+
+
+      };
+
+      
+    </script>
+
+  </body>
+
+</html>

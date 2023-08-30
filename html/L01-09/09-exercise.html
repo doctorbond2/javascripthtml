@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>DOM</title>
+
+  </head>
+  <body>
+
+    <button onclick="
+      localStorage.removeItem('score');
+      score = {
+        wins: 0,
+        loss: 0
+      };
+      updateScore();
+
+      "> Reset score</button>
+
+    <p>Heads or Tails?</p>
+    <input onkeydown="guess(event);" placeholder="Type here" class="js-guess">
+
+    <p class="js-result"></p>
+    <p></p>
+    <p class="js-score"></p>
+
+    <script>
+      
+      document.querySelector('.js-result').innerText = 'Who will win?';
+
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        loss: 0
+      };
+
+      function displayResult () {
+        
+        const computerMove = computerPick();
+        
+        const guessElement = document.querySelector('.js-guess');
+
+        
+        let result = '';
+
+        if (guessElement.value === 'Heads' || guessElement.value === 'Tails'){
+
+          if (guessElement.value === computerMove) {
+            result = 'You win!';
+          } else {
+            result = 'You lose.';
+          }
+        } else {
+          result = `Please guess "Heads" or "Tails"`
+        }
+
+        if (result === 'You win!') {
+          score.wins += 1;
+        } else if (result === 'You lose.') {
+          score.loss += 1;
+        }
+
+        document.querySelector('.js-result').innerHTML = result;
+
+        updateScore();
+
+        
+
+
+      }
+
+      function guess(event) {
+        if (event.key === 'Enter') {
+          displayResult();
+        }
+
+      }
+
+      function updateScore() {
+        
+        localStorage.setItem('score', JSON.stringify(score));
+
+        document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.loss}`;
+        
+      }
+
+      function computerPick() {
+        
+        const randomFactor = Math.random();
+
+        let computerMove = undefined;
+
+        if (randomFactor > 1/2 && randomFactor <= 1) {
+          computerMove = 'Heads';
+       } else {
+         computerMove = 'Tails';
+       }
+          console.log(computerMove);
+          return computerMove;
+       }
+       
+      document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.loss}`;
+        
+    
+
+      
+    </script>
+
+  </body>
+
+</html>

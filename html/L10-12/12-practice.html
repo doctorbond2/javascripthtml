@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .timer {
+      height: 100px;
+      width: 300px;
+      background-color: greenyellow;
+      color: red;
+      font-size: 100px;
+      align-items: center;
+    }
+
+    .timer-number {
+      font-size: 100px;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 100px 100px 100px 100px;
+    }
+    .button {
+      font-family: inherit;
+      font-size: 20px;
+      background-color: green;
+      color: white;
+      border: none;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="grid">
+
+  <p class="timer js-mega-hours"></p>
+  <p class="timer js-hours"></p>
+  <p class="timer js-minutes"></p>
+  <p class="timer js-seconds"></p>
+  </div>
+  <button onclick="
+    startTimer();
+  " class="button">Start</button>
+
+  <script>
+
+    let intervalId = '';
+    let seconds = 0;
+    let secondsElement = document.querySelector('.js-seconds');
+    let minutes = 0;
+    let minutesElement = document.querySelector('.js-minutes');
+    let hours = 0;
+    let hoursElement = document.querySelector('.js-hours');
+    let megaHours = 0;
+    let megaHoursElement = document.querySelector
+      ('.js-mega-hours');
+
+    secondsElement.innerHTML = 0;
+    minutesElement.innerHTML = 0;
+    hoursElement.innerHTML = 0;
+    megaHoursElement.innerHTML = 0;
+
+
+      function startTimer() {
+        intervalId = setInterval(() => {
+
+          if (!(hours === 4 && megaHours === 2)){
+            if(seconds !== 9) {
+        seconds++;
+      } else if (minutes < 5) {
+        seconds = 0;
+        minutes++;
+      } else {
+        minutes = 0;
+        seconds = 0;
+      }
+
+      if (minutes === 0 && seconds === 0) {
+        if (hours < 9) {
+          hours++;
+        } else if (hours === 9) {
+            if(megaHours < 2){
+                hours = 0;
+                megaHours++;
+          
+        }
+      }  
+    }
+          }
+          
+
+      secondsElement.innerHTML = seconds;
+      minutesElement.innerHTML = minutes;
+      hoursElement.innerHTML = hours;
+      megaHoursElement.innerHTML = megaHours;
+
+    }, 10);
+      }
+
+      
+
+
+
+
+/*
+    console.log(removeEgg(foods));
+
+    const foods = ['glass', 'choklad', 'marshmellow', 'egg', 'godis', 'egg', 'egg', 'egg'];
+    const testArray = [12,-13,2,44,-3,-5,10];
+
+    function countPositive(array) {
+      let result = '';
+      result = array.filter(value => value >= 0);
+
+      return result;
+
+    }
+
+    console.log(countPositive([12,12,-3]));
+
+    function addNum(array,num) {
+      return array.map(value => value + num);
+    }
+    console.log(addNum(testArray, 5));
+
+    function removeEgg(foods) {
+      let eggBasket = 0;
+      return foods.filter((food) => {
+        if (eggBasket <= 2 && food === 'egg') {
+          eggBasket++;
+          return false;
+        }
+        else return true;
+      });
+    }
+    */
+  </script>
+  
+</body>
+</html>

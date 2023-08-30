@@ -1,0 +1,26 @@
+body {
+  background-color: blue;
+}
+
+.default-button {
+  font-style: oblique;
+  font-size: medium;
+  font-family: 'Lucia Sans';
+  background-color: rgb(251, 255, 43);
+  padding: 10px 20px;
+  border-width: 3px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  background-color: white;
+  padding: 10px 20px;
+  border-color: black;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+.edvin-image {
+  width: 400px;
+  border-radius: 200px;
+}

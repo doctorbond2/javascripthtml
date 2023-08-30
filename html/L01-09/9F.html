@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>copyChallenge</title>
+
+  </head>
+  <body>
+
+    <input class="js-input" 
+        onkeyup="
+      keyCopy(event);
+      " onkeydown="
+      enterKey(event);
+      ">
+
+      <p class="js-copy"></p>
+      <p class="js-complete-copy"></p>
+
+
+    
+    <script>
+
+      function keyCopy() {
+
+        const copyElement = document.querySelector('.js-input');
+
+        document.querySelector('.js-copy').innerText = copyElement.value;
+
+      }
+
+        function enterKey(event) {
+          
+          if(event.key === 'Enter') { 
+
+            const enterElement = document.querySelector('.js-input');
+            document.querySelector('.js-complete-copy').innerText = enterElement.value;
+            console.log(enterElement.value);
+        }
+        }
+      
+
+
+
+    </script>
+
+  </body> 
+
+</html> 

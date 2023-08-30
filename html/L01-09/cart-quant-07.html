@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+        updateQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+        updateQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+        updateQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+        updateQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+    updateQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+    updateQuantity(-3)
+    ">-3</button>
+
+
+    <button onclick="
+    updateQuantity(0);
+    ">Reset Cart</button>
+
+    <p class="js-quantity"></p>
+
+    <script>
+      
+      let cartQuantity = JSON.parse(localStorage.getItem('cartQuant')) || 0;
+
+      document.querySelector('.js-quantity').innerHTML = `Cart quantity: ${cartQuantity}`;
+
+      function updateQuantity(userInput) {
+
+        if (userInput === 1) {
+          cartQuantity + userInput > 10 ? alert('The cart is full') : cartQuantity++; 
+          console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === 2) {
+            cartQuantity + userInput > 10 ? alert('The cart is full') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === 3) {
+            cartQuantity + userInput > 10 ? alert('The cart is full') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === 4) {
+            cartQuantity + userInput > 10 ? alert('The cart is full') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === 5) {
+            cartQuantity + userInput > 10 ? alert('The cart is full') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+            
+        } else if (userInput === (-1)) {
+            cartQuantity + userInput < 0 ? alert('Not enough items in the cart') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === (-2)) {
+            cartQuantity + userInput < 0 ? alert('Not enough items in the cart') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);
+
+        } else if (userInput === (-3)) {
+            cartQuantity + userInput < 0 ? alert('Not enough items in the cart') : cartQuantity += userInput; 
+            console.log(`Cart quantity: ${cartQuantity}`);   
+
+        } else if (userInput === 0) {
+            cartQuantity = 0;
+            console.log(`Cart quantity: ${cartQuantity}`);
+            alert('Cart was reset.');
+        }
+        document.querySelector('.js-quantity').innerHTML = `Cart quantity: ${cartQuantity}`;
+
+        localStorage.setItem('cartQuant', JSON.stringify(cartQuantity));
+
+        return cartQuantity;
+      }
+
+    </script>
+  </body>
+</html>

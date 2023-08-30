@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html>
+
+
+  <head>
+  <title> coinflip </title>
+  </head>
+
+  <body>
+
+    <button onclick="
+
+      const randomNumber = Math.random();
+
+
+      (randomNumber >= 0.5) && (result = true);
+
+      (randomNumber <= 0.5) && (result = false);
+
+      result ? console.log('Heads') : console.log('Tails');
+
+      ">
+
+    Flip a coin</button>
+
+    <button onclick="
+
+      if ( result === undefined )
+
+        alert('Please flip the coin!');
+
+        else
+
+        (result) ? alert('You win!') : alert('You lose.');
+
+      
+
+      ">
+    Guess Heads!</button>
+
+
+    <button onclick="
+
+      if ( result === undefined )
+
+        alert('Please flip the coin!');
+
+      else
+      
+        result ? alert('You lose.') : alert('You win!');
+
+      
+
+      ">
+
+
+
+    Guess Tails!</button>
+
+
+
+  </body> 
+
+  <script>
+
+  let result = undefined;
+
+  </script>
+
+</html>

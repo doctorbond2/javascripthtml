@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+    <script>
+      /*
+      let array1 = [3];
+      let array2 = [33, 104, -23, 86, -100];
+      let array3 = [1, 30, -3];
+      let array4 = [];
+      let array5 = ['banana', 'apple', 'joey', 'discus', 'apple', 'joey', 'discus', 'apple', 'banana', 'apple'];
+
+      let updateArray = newArray(array2, 10);
+
+      console.log(updateArray);
+
+      function newArray(array, num) {
+
+        arrayPlusOne = [];
+
+        for (let i = 0; i < array.length; i++) {
+
+          let value = array[i];
+
+          value = value + num;
+
+          arrayPlusOne.push(value);
+
+          console.log(value);
+
+          console.log(array);
+
+
+        }
+        return arrayPlusOne;
+
+      }
+
+      function newArray1(array1, array2) {
+
+        arrayMerged = [];
+
+        for (i = 0; i < array1.length; i++) {
+
+          let mergedValue = array1[i] + array2[i];
+
+          console.log(mergedValue);
+
+
+        }
+
+        return arrayMerged;
+
+      }
+
+
+      newArray1(array3,array3);
+
+      countArray(array3);
+
+      function countArray(array) {
+
+        let assignArray = [];
+
+        for (let i = 0; i < array.length; i++) {
+          if(array[i] > 0) {
+            assignArray.push(array[i]);
+          }
+        }
+
+        console.log(`Number of positive integers: ${assignArray.length}`);
+
+        let result = `Number of positive integers: ${assignArray.length}`;
+
+        return result;
+      }
+
+      function minMax(nums) {
+        console.log('Sorting...');
+
+        let result = '';
+        let max = null;
+        let min = null;
+
+        if (nums.length > 0) {
+          min = nums[0];
+          max = nums[0];
+
+        for (let i = 0; i < nums.length; i++) {
+          
+          if (max < nums[i]) {
+            max = nums[i]; 
+          }
+          if (min > nums[i]) {
+            min = nums[i];
+          }
+          console.log(min, max);
+        }
+
+      }
+      
+      result = `
+      Result: 
+      Min: ${min}, 
+      Max: ${max}.`;
+      console.log(result);
+      return result;
+
+    }
+
+      minMax(array2);
+
+      function countWords(words) {
+
+        const wordList = {};
+        
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+
+          if (!wordList[word]) {
+            wordList[word] = 1;
+          } else {
+            wordList[word]++;
+          }
+        }
+        console.log(wordList);
+        return wordList;
+      }
+      countWords(array5);
+      */
+
+      const array1 = [1, 2, 3];
+      const array2 = array1.slice();
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+
+      const [firstValue, secondValue, thirdValue] = [1, 2, 3];
+
+
+      let i = 1;
+
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+      function doubleArray(nums) {
+        
+      const numsDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        if (num === 0) {
+          return numsDoubled;
+        }
+        numsDoubled.push(num * 2);
+      }
+      return numsDoubled;
+    }
+
+    console.log(doubleArray([2, 2, 5, 0]));
+
+    </script>
+  </body>
+</html> 

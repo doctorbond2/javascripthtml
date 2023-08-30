@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>functions07</title>
+
+  </head>
+  <body>
+
+    
+    <script>
+      
+      function greet(name) {
+        
+      name ? console.log(`Hello ${name}!`) : console.log('Hello there!');
+        
+          
+
+      }
+
+      function convertTemperature(amount, type) {
+        
+        if (type === 'C'){
+          const fahrenheit = Math.round((amount * (9/5) + 32));
+
+          console.log(`${amount}) degrees ${type} is ${fahrenheit} fahrenheit.`);
+        }
+        else if (type === 'F'){
+          const celsius = Math.round((amount -32) * 5/9);
+
+          console.log(`${amount} degrees ${type} is ${celsius} celsius.`);
+        }
+        
+        
+        
+        
+      }
+
+      function convertToCelsius(fahrenheit, amount) {
+
+        const celsius = (fahrenheit -32) * 5/9;
+      }
+
+      convertTemperature(25, 'F');
+      
+    </script>
+
+  </body>
+
+</html>

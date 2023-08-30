@@ -1,0 +1,22 @@
+body {
+  background-color: gray;
+  font-family: Arial;
+}
+
+.reset-button {
+  color: white;
+  font-family: Courier;
+  background-color: black;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 20px;
+}
+
+.scorereset-button {
+  color: white;
+  font-family: Courier;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 10px 40px;
+  border-radius: 20px;
+}
